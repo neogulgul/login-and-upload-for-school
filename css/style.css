@@ -1,0 +1,213 @@
+@font-face {
+	font-family: "Poppins-Regular";
+	src: url(../assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Poppins-Bold";
+	src: url(../assets/fonts/Poppins-Bold.ttf);
+}
+
+:root {
+	/* colors */
+	--background:     #ffffff;
+	--foreground:     #000000;
+	--main:           #5ba260;
+	--main-alt:       #34764b;
+	--error:          #d31312;
+
+	/* other */
+	--shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins-Regular";
+	font-size: 15px;
+	font-weight: normal;
+	line-height: 150%;
+	color: var(--foreground);
+}
+
+body {
+	background-color: var(--background);
+}
+
+h1, h2 { text-align: center; }
+
+h1 {
+	margin: 20px;
+	font-family: "Poppins-Bold";
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.4em;
+}
+
+a {
+	text-decoration: none;
+	color: var(--main);
+}
+
+a:hover {
+	color: var(--main-alt);
+}
+
+button {
+	padding: 10px 20px;
+	border: 2px solid var(--main);
+	border-radius: 10px;
+	cursor: pointer;
+	font-family: "Poppins-Bold";
+	background-color: var(--background);
+	color: var(--main);
+}
+
+button:hover {
+	background-color: var(--main);
+	color: var(--background);
+}
+
+.error {
+	color: var(--error);
+}
+
+#site-wrapper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+#home {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: var(--shadow);
+	font-family: "Poppins-Bold";
+	background-color: rgba(255, 255, 255, 0.5);
+	fill: var(--main);
+}
+
+#home:hover {
+	fill: var(--main-alt);
+}
+
+#gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	gap: 25px;
+	padding: 25px;
+}
+
+#gallery .post {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	height: fit-content;
+	padding: 25px;
+	border-radius: 10px;
+	box-shadow: var(--shadow);
+	background-color: var(--background);
+}
+
+#gallery .post img {
+	max-width: 300px;
+	max-height: 300px;
+}
+
+#gallery .post .title {
+	font-family: "Poppins-Bold";
+	font-size: 1.2em;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+#nav-links {
+	--spacing: 25px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--spacing);
+	padding: var(--spacing);
+}
+
+#nav-links a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing);
+	width: 250px;
+	padding: var(--spacing);
+	border: 5px solid var(--main);
+	border-radius: 10px;
+	box-shadow: var(--shadow);
+	font-family: "Poppins-Bold";
+	font-size: 1.5em;
+	fill: var(--main);
+}
+
+#nav-links a svg {
+	width: 50px;
+	height: 50px;
+	fill: inherit;
+}
+
+#nav-links a:hover {
+	background-color: var(--main);
+	color: var(--background);
+	fill: var(--background);
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+	max-width: 500px;
+	margin-bottom: 20px;
+	padding: 40px;
+	border-radius: 10px;
+	box-shadow: var(--shadow);
+}
+
+form input {
+	width: 100%;
+	padding: 10px;
+	border: 2px solid var(--main);
+	border-radius: 10px;
+	outline: none;
+}
+
+form input[type="text"]:focus, form input[type="password"]:focus {
+	border-color: var(--main-alt);
+}
+
+form input[type="submit"] {
+	background-color: var(--main);
+	color: var(--background);
+	cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+	border-color: var(--main-alt);
+	background-color: var(--main-alt);
+}
