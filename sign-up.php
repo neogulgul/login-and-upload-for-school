@@ -14,7 +14,7 @@
 			<input name="sign-up" type="submit" value="Sign up">
 			<?php
 			parse_str($_SERVER["QUERY_STRING"], $queryString);
-			if ($queryString["invalid"] === "true")
+			if (isset($queryString["invalid"]) && $queryString["invalid"] === "true")
 			{
 				echo "<h2 class='error'>Invalid.<br>That username<br>is already in use.</h2>";
 			}

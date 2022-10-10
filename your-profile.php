@@ -26,7 +26,7 @@
 			<input name="upload" type="submit" value="Upload">
 			<?php
 			parse_str($_SERVER["QUERY_STRING"], $queryString);
-			if ($queryString["invalid"] === "true")
+			if (isset($queryString["invalid"]) && $queryString["invalid"] === "true")
 			{
 				echo "<h2 class='error'>Invalid.<br>Either the file is not an image<br>or the file is too large.</h2>";
 			}

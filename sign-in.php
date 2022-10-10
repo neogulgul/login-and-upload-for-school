@@ -14,7 +14,7 @@
 			<input name="sign-in" type="submit" value="Sign in">
 			<?php
 			parse_str($_SERVER["QUERY_STRING"], $queryString);
-			if ($queryString["invalid"] === "true")
+			if (isset($queryString["invalid"]) && $queryString["invalid"] === "true")
 			{
 				echo "<h2 class='error'>Invalid.<br>Either the username<br>or password was wrong.</h2>";
 			}
